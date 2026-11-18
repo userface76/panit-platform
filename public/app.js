@@ -21,3 +21,9 @@ $('detail').querySelector('.close').addEventListener('click',()=>$('detail').clo
 for(const id of ['category','purpose','budget'])$(id).addEventListener('change',render);
 $('reset').addEventListener('click',()=>{for(const id of ['category','purpose','budget'])$(id).value='';render()});
 function openHash(){const id=location.hash.replace('#product-','');const p=products.find(p=>p.id===id);if(p)showProduct(p)}render();openHash();window.addEventListener('hashchange',openHash);
+
+// Persist only the display preference. No personal or customer data is stored.
+function applyView(desktop){document.documentElement.dataset.view=desktop?'desktop':'auto';document.querySelector('meta[name="viewport"]').content=desktop?'width=1280':'width=device-width,initial-scale=1';try{if(desktop)localStorage.setItem('panit-view','desktop');else localStorage.removeItem('panit-view')}catch(e){}$('view-toggle').textContent=desktop?'모바일 화면 보기':'PC 화면 보기';$('view-toggle').setAttribute('aria-pressed',String(desktop));$('view-status').textContent=desktop?'현재 PC 화면으로 보고 있습니다.':'화면 크기에 맞춰 자동으로 표시합니다.';$('mobile-return').hidden=!desktop;}
+$('view-toggle').addEventListener('click',()=>{const desktop=document.documentElement.dataset.view!=='desktop';applyView(desktop);window.scrollTo({top:0,behavior:'instant'})});
+$('mobile-return').addEventListener('click',()=>{applyView(false);window.scrollTo({top:0,behavior:'instant'})});
+applyView(document.documentElement.dataset.view==='desktop');
