@@ -24,7 +24,7 @@ Node.js 환경에서 `npm run check`, 로컬 미리보기는 `npm run dev`.
 1. Cloudflare 대시보드에 로그인합니다.
 2. Workers & Pages에서 GitHub 저장소 연결을 선택합니다. 실제 메뉴 문구는 화면에 따라 확인합니다.
 3. userface76/panit-platform 저장소, main 브랜치를 선택합니다.
-4. Worker 이름은 panit-web, 프로젝트 루트는 저장소 루트입니다.
+4. Worker 이름은 panit-platform, 프로젝트 루트는 저장소 루트입니다.
 5. 빌드 명령은 비워 두고 배포 명령은 `npx wrangler@4 deploy`로 지정합니다.
 6. 배포 결과의 실제 workers.dev 주소를 확인합니다. 정식 도메인은 추후 연결합니다.
 
