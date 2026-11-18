@@ -26,3 +26,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(hover:hover){.product:hover{box-shadow:0 12px 30px #101d3612;transform:translateY(-3px)}.button:hover{filter:brightness(.96)}}
 @media(max-width:700px){h1{font-size:clamp(34px,9.5vw,43px)}h2{font-size:clamp(28px,7.5vw,32px)}.product-content{padding:20px}.product-content p,.section details p{font-size:15px}.filters select,.filters input{font-size:16px;min-width:0}.mobile-nav{padding-bottom:max(10px,env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Category illustrations: a unified nine-panel image atlas */
+.product-art.product-image{height:auto;aspect-ratio:1.5;padding:0;background-image:url('/images/panit-categories-v1.webp');background-size:300% 300%;background-repeat:no-repeat;background-color:var(--paper);isolation:isolate}
+.product-art.product-image:after{display:none}
+.product-image.image-artist{background-position:0 0}
+.product-image.image-band{background-position:50% 0}
+.product-image.image-mc{background-position:100% 0}
+.product-image.image-magic{background-position:0 50%}
+.product-image.image-school{background-position:50% 50%}
+.product-image.image-sports{background-position:100% 50%}
+.product-image.image-dance{background-position:0 100%}
+.product-image.image-classic{background-position:50% 100%}
+.product-image.image-korean{background-position:100% 100%}
+.product-art .image-note{position:absolute;left:12px;bottom:12px;padding:4px 8px;border-radius:5px;background:#101d36d9;color:white;font-size:10px;line-height:1.5;letter-spacing:.2px;opacity:1}
