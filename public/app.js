@@ -27,3 +27,6 @@ function applyView(desktop){document.documentElement.dataset.view=desktop?'deskt
 $('view-toggle').addEventListener('click',()=>{const desktop=document.documentElement.dataset.view!=='desktop';applyView(desktop);window.scrollTo({top:0,behavior:'instant'})});
 $('mobile-return').addEventListener('click',()=>{applyView(false);window.scrollTo({top:0,behavior:'instant'})});
 applyView(document.documentElement.dataset.view==='desktop');
+
+function updateMobileNav(){const hash=location.hash||'#';document.querySelectorAll('.mobile-nav a').forEach(a=>{if(a.getAttribute('href')===hash)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});}
+window.addEventListener('hashchange',updateMobileNav);updateMobileNav();
