@@ -18,7 +18,7 @@ function showProduct(p){const u=new URL(location.href);u.hash='product-'+p.id;mo
 faq.forEach(([q,a])=>{const d=document.createElement('details');const s=document.createElement('summary');s.textContent=q;const p=document.createElement('p');p.textContent=a;d.append(s,p);$('questions').append(d)});
 document.querySelectorAll('[data-info]').forEach(b=>b.addEventListener('click',()=>modal(b.dataset.info==='signup'?'<h2>무료 파트너 참여 준비 중</h2><p>SNS·지역 활동 방식 선택, 개인 홍보 링크, 상담·계약 실적 확인 기능을 준비합니다.</p><p>현재는 회원 정보를 수집하지 않습니다. 가입·운영규정·개인정보 안내 확정 후 서비스를 시작합니다.</p>':'<h2>나만의 브랜드관</h2><p>개설비 150,000원 + VAT 15,000원 = <b>165,000원</b></p><p>상호·로고·소개·전용 페이지와 본사 상품·상담 시스템을 연결하는 서비스로 준비합니다.</p><p>이용기간·갱신비·수정·환불 조건은 확정 전이며 지금 결제할 수 없습니다.</p>')));
 $('detail').querySelector('.close').addEventListener('click',()=>$('detail').close());
-for(const id of ['category','purpose','budget'])$(id).addEventListener('change',render);
+$('search').addEventListener('click',render);
 $('reset').addEventListener('click',()=>{for(const id of ['category','purpose','budget'])$(id).value='';render()});
 function openHash(){const id=location.hash.replace('#product-','');const p=products.find(p=>p.id===id);if(p)showProduct(p)}render();openHash();window.addEventListener('hashchange',openHash);
 

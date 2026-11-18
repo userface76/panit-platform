@@ -40,3 +40,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .product-image.image-classic{background-position:50% 100%}
 .product-image.image-korean{background-position:100% 100%}
 .product-art .image-note{position:absolute;left:12px;bottom:12px;padding:4px 8px;border-radius:5px;background:#101d36d9;color:white;font-size:10px;line-height:1.5;letter-spacing:.2px;opacity:1}
+
+/* Explicit event search with a secondary clear action */
+.search-actions{display:flex;flex-direction:column;gap:4px;align-items:stretch}.search-actions .button{white-space:nowrap}.show-all{border:0;background:transparent;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px;min-height:44px;cursor:pointer}.show-all:hover{color:var(--ink)}
